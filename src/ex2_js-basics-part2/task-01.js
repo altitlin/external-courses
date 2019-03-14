@@ -7,7 +7,7 @@ function numberOrString(value) {
         return typeVarible;
     }  
 	
-	return value;
+	return undefined;
 
 }
 
