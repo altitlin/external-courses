@@ -1,11 +1,14 @@
 function numberOrString(value) {
-    var varible;
     var typeVarible = typeof value;
-    if (typeVarible === 'string' || typeVarible === 'number') {
+	
+	if (isNaN(value)) return undefined;
+
+    if (typeof value === 'string' || typeof value === 'number') {
         return typeVarible;
-    }
-    
-	return varible;
+    }  
+	
+	return value;
+
 }
 
 module.exports = numberOrString

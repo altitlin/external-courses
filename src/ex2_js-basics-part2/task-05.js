@@ -1,5 +1,5 @@
-function max(arr) {
-    var max = 0;
+function getMaxElement(arr) {
+    var max = arr[1];
 
     for ( var i = 0; i < arr.length; i++ ) {
         if ( max < arr[i] ) {
@@ -10,4 +10,4 @@ function max(arr) {
     return max;
 }
 
-module.exports = max
+module.exports = getMaxElement

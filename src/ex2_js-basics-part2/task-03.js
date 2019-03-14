@@ -1,5 +1,5 @@
 function countEvenAndOdd(arr) {
-    var even = odd = nulls = 0;
+    var even = 0, odd = 0, nulls = 0;
 
     for (var i = 0; i < arr.length; i++) {
         if (arr[i] === null) continue; 
