@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="Web tutorial">
+        <meta name="keywords" content="HTML5, JavaScript, CSS3">
+        <title>Задание №3</title>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            div {
+                margin: 30px;
+                padding: 10px;
+                width: 100px;
+                height: 50px;
+                background-color: #ccc;
+            }
+
+            .one {
+                border: 2px solid #000;
+            }
+
+            .two {
+                outline: 2px solid #000;
+            }
+
+            .three {
+                box-shadow: 0 0 0 2px #000;
+            }
+
+            .four {
+                position: relative;                
+            }
+
+            .four::before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: -2px;
+                left: -2px;
+                bottom: -2px;
+                right: -2px;
+                padding: 10px;
+                background-color: #000;
+            }
+
+            .four::after {
+                content: 'four block';
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                padding: 10px;
+                background-color: #ccc;
+            }
+
+            .five {
+                border-style: solid;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="one">one block</div>
+        <div class="two">two block</div>
+        <div class="three">three block</div>
+        <div class="four">four block</div>
+        <div  class="five">five block</div>
+    </body>
+</html>
