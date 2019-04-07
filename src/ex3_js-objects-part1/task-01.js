@@ -1,12 +1,9 @@
-var Object = {
-    a: 3,
-    b: 'b',
-    c: boolean,
-    d: undefined,
-    e: null,
-    f: function() {
-        
-    }
-};
+var obj = {};
 
-delete Object.d;
+obj.name = 'Alexander';
+obj[age] = 22;
+obj.b = undefined;
+obj[n] = null;
+obj.d = function() {};
+
+delete obj.d;
