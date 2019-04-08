@@ -1,0 +1,54 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+div {
+    width: 100px;
+    height: 40px;
+    padding: 20px;
+    margin: 10px;
+}
+
+.one {
+    background-color: rgba(204, 51, 255, 0.5);
+    font-size: 2em;
+    width: 150px;
+}
+
+.two {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
+    font-size: 20pt;
+    color: #fff;
+    background-color: rgb(205, 51, 255);
+}
+
+.three {
+    background-color: #e6e3df;
+    width: 10%;
+    box-shadow: 
+        inset 2px 2px 5px rgba(154, 147, 140, 0.5),
+        1px 1px 5px rgba(255, 255, 255, 1);
+}
+
+.four {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    background-image: url('https://i.ytimg.com/vi/NKk6rGDpq6Y/hqdefault.jpg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px;
+    box-shadow: 
+        0 14px 28px rgba(0,0,0,0.25), 
+        0 10px 10px rgba(0,0,0,0.22);
+}
+
+.five {
+    background-color: aqua;
+    font-size: 1.5em;
+    font-family: 'Courier New', Courier, monospace;
+}
