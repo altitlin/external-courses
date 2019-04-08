@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body > div {
+    width: 300px;
+    height: 80px;
+    background-color: rgba(102, 6, 0, .7); 
+    margin: 50px auto;
+}
+
+.one {
+    box-shadow: 
+        20px 20px 0 0 rgba(102, 6, 0, .2),
+        10px 10px 0 0 rgba(102, 6, 0, .5);
+}
+
+.two {
+    position: relative;
+}
+
+.two::before,
+.two::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 80px;
+}
+
+.two::before {
+    top: 10px;
+    left: 10px;
+    background-color: rgba(102, 6, 0, .5);
+}
+
+.two::after {
+    top: 20px;
+    left: 20px;
+    background-color: rgba(102, 6, 0, .2);
+}
+
+.three {
+    position: relative;
+}
+
+.three-child {
+    position: absolute;
+    width: 300px;
+    height: 80px;
+}
+
+.three-child:first-child {
+    top: 10px;
+    left: 10px;
+    background-color: rgba(102, 6, 0, .5);
+}
+
+.three-child:last-child {
+    top: 20px;
+    left: 20px;
+    background-color: rgba(102, 6, 0, .2);
+}
