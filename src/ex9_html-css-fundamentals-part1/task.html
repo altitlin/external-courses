@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="task.css">
+        <title>Форма</title>
+    </head>
+    <body>
+        <form action="" method="">
+            <ul>
+                <li>
+                    <h2>Form Here</h2>
+                    <span>* required field</span>
+                </li>
+                <li>
+                    <label for="name">Name:</label>
+                    <input type="text" placeholder="Enter name" id="name" name="name" required>
+                </li>
+                <li>
+                    <label for="email">Email:</label>
+                    <input type="email" placeholder="Enter email" name="email" id="email" required>
+                    <span>Proper format email</span>
+                </li>
+                <li>
+                    <label for="website">Website:</label>
+                    <input type="url" placeholder="Enter website" name="website" id="website" required>
+                    <span>Proper format website</span>
+                </li>
+                <li>
+                    <label for="message">Message:</label>
+                    <textarea name="messege" id="message" cols="40" rows="6" required></textarea>
+                </li>
+                <li>
+                    <button type="submit">Submit</button>
+                </li>
+            </ul>
+        </form>
+    </body>
+</html>
