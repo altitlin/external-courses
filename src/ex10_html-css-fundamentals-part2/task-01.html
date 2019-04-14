@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Задание №1</title>
+    </head>
+    <body>
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Personal data</legend>
+                    <p>
+                        <label>
+                            Surname
+                            <input type="text" name="surname">
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            First Name
+                            <input type="text" name="firstname">
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            Middle Name
+                            <input type="text" name="middlename">
+                        </label>
+                    </p>
+                    <p>
+                        You are
+                        <label>
+                            <input type="radio" name="age" value="male"> male
+                        </label>
+                        <label>
+                            <input type="radio" name="age" value="female"> female
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            Age
+                            <input type="number" name="useage" min="18" max="101" step="1">
+                        </label>
+                    </p>
+                    <p>
+                        Country of Residence
+                        <select name="country">
+                            <option value="Russia">Russia</option>
+                            <option value="France">France</option>
+                            <option value="England">England</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Portugal">Portugal</option>
+                        </select>
+                    </p>
+                    <p>
+                        City
+                        <label>
+                            <input type="checkbox" name="city"> Ryazan
+                        </label>
+                        <label>
+                            <input type="checkbox" name="city"> Moscow
+                        </label>
+                    </p>
+                    <p>
+                        Photography
+                        <input type="file" name="photo">
+                    </p>
+                    <hr />
+                    <p>
+                        Title
+                        <select name="title" size="8" multiple>
+                            <optgroup label="Technologies">
+                                <option value="Web Master">Web Master</option>
+                                <option value="Database Administrator">Database Administrator</option>
+                                <option value="Comptuter-aided design">Comptuter-aided design</option>
+                            </optgroup>
+                            <optgroup label="Finance">
+                                <option value="Economic Planning">Economic Planning</option>
+                                <option value="Management accounting">Management accounting</option>
+                                <option value="Budgeting and planning">Budgeting and planning</option>
+                            </optgroup>
+                        </select>
+                    </p>
+                    <p>
+                        Salary
+                        <input type="range" name="salary">
+                    </p>
+                    <textarea name="coment" cols="50" rows="10" placeholder="Tell us about yourself..."></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>Contact Information</legend>
+                <p>
+                    Site
+                    <label>
+                        <input type="url" name="site">
+                    </label>
+                </p> 
+                <p>
+                    Email
+                    <label>
+                        <input type="email" name="email">
+                    </label>
+                </p> 
+                <p>
+                    Phone
+                    <label>
+                        <input type="tel" name="tel">
+                    </label>
+                </p> 
+            </fieldset>
+            <p>
+                Password
+                <label>
+                    <input type="password" name="password" required>
+                </label>
+            </p>
+            <p>
+                <input type="submit" value="Отправить">
+                <input type="reset">
+            </p>
+        </form>
+    </body>
+</html>
