@@ -30,7 +30,10 @@ td {
     background-color: #F0F8FF;
 }
 
-#row-1 {
+#row-1,
+#row-2,
+#row-3,
+#row-4 {
     font-size: 14px;
     text-transform: uppercase;
 }
@@ -40,7 +43,7 @@ td {
     background-color: #AFEEEE;
 }
 
-#first {
+.first {
     text-transform: capitalize;
 }
 
