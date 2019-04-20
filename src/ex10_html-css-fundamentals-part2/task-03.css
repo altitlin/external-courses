@@ -269,7 +269,6 @@ article .text p {
         max-width: 100%;
         height: auto;
         display: block;
-        background-image: url('images-03/iback.png') no-repeat;
     }
     .about {
         flex-direction: column;
