@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: rgb(120, 130, 157);
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 200px;
+    padding-top: 35px;
+    padding-bottom: 95px;
+    background-color: rgb(31, 38, 55);
+}
+
+aside header {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 35px;
+    border-bottom: 4px solid rgba(24, 30, 44, 0.8);
+}
+
+header button {
+    position: relative;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.857;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid rgb(242, 121, 90);
+    padding: 9px 16px;
+    background-color: rgb(242, 121, 90);
+}
+
+header button i {
+    margin-right: 15px;
+}
+
+aside nav {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;    
+    border-bottom: 4px solid rgba(24, 30, 44, 0.8);
+}
+
+nav a {
+    color: rgb(120, 130, 157);   
+    padding: 15px 20px;
+    align-content: center;
+}
+
+nav a i {
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+nav a.active {
+    color: rgb(255, 255, 255);
+    background-color: rgb(21, 164, 250);
+}
+
+.categories {
+    padding: 15px 20px;
+    padding-bottom: 25px;
+    border-bottom: 4px solid rgba(24, 30, 44, 0.8);
+}
+
+.categories li {
+    position: relative;
+    padding-left: 25px;
+}
+
+.categories li::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.categories li:nth-child(1)::before {
+    background-color: rgb(230, 76, 102);
+}
+
+.categories li:nth-child(2)::before {
+    background-color: rgb(255, 171, 0)
+}
+
+.categories li:nth-child(3)::before {
+    background-color: rgb(0, 191, 221);
+}
+
+.categories li:nth-child(4)::before {
+    background-color: rgb(120, 116, 207);
+}
+
+.categories li:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.history {
+    padding: 35px 20px;
+    position: relative;
+}
+
+.history > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+} 
+
+.history > div:not(:last-child) {
+    margin-bottom: 35px;
+}
+
+.history > div > span {
+    margin-right: 10px;
+}
+
+.history p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.history p:not(:last-child) {
+    margin-bottom: 20px;
+}
