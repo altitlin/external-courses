@@ -1,4 +1,4 @@
-var Calculator = function(){
+var Calc = function(){
     this.currentState = 0;
 
     this.add = function(value) {
@@ -62,6 +62,6 @@ var Calculator = function(){
     }
 }
 
-var Calculator = new Calculator();
+var Calculator = new Calс();
 
 module.exports = Calculator;
