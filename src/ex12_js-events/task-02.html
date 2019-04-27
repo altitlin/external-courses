@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            #menu {
+                margin: 0 15px;
+                width: 100px;
+            }
+
+            #menu li a {
+                display: block;
+                padding: 5px 15px;
+                color: #fff;
+                background-color: rgb(83, 132, 238);
+            }
+
+            #menu > li > a {
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+            }
+
+            #menu #sub-menu {
+                width: 100px;
+                display: none;
+            }
+
+            #menu #sub-menu li:hover a {
+                background-color: rgb(55, 98, 192);
+            }
+
+            #menu #sub-menu li:last-child {
+                border-bottom: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="menu">
+            <li>
+                <ul id="sub-menu">
+                    <li><a href="#">Menu 1</a></li>
+                    <li><a href="#">Menu 2</a></li>
+                    <li><a href="#">Menu 3</a></li>
+                    <li><a href="#">Menu 4</a></li>
+                    <li><a href="#">Menu 5</a></li>
+                </ul>
+                <a href="" id="dropdown">Top menu</a>
+            </li>
+        </ul>
+
+        <script>
+            function handler() {
+                var subMenu = document.getElementById('sub-menu');
+
+                if (subMenu.style.display === 'block') {
+                    subMenu.style.display = 'none';
+                } 
+                    
+                subMenu.style.display = 'block';
+            }
+
+            var dropDown = document.getElementById('dropdown');
+
+            dropDown.addEventListener('mousedown', handler);
+        </script>
+    </body>
+</html>
