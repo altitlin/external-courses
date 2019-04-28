@@ -1,54 +1,58 @@
-var Calc = function(){
+function Calc() {
+    function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+
     this.currentState = 0;
 
     this.add = function(value) {
-        if (typeof value !== 'undefined') {
+        if (isNumeric(value)) {
             this.currentState += value;
         }
 
         return this;
-    }
+    };
 
     this.subtract = function(value) {
-        if(typeof value !== 'undefined') {
+        if(isNumeric(value)) {
             this.currentState -= value;
         }
 
         return this;
-    }
+    };
 
     this.multiply = function(value) {
-        if(typeof value !== 'undefined') {
+        if(isNumeric(value)) {
             this.currentState *= value;
         }
 
         return this;
-    }
+    };
 
     this.divide = function(value) { 
-        if(typeof value !== 'undefined') {
+        if(isNumeric(value)) {
             this.currentState /= value;
         }
 
         return this;
-    }
+    };
 
     this.reset = function() {
         this.currentState = 0;
         return this;
-    }
+    };
 
     this.getResult = function() {
         return this.currentState;
-    }
+    };
 
     this.setState = function(value) {
-        if(typeof value !== 'undefined') {
+        if(isNumeric(value)) {
             this.currentState = value;
         }
 
         return this;
-    }
+    };
 
     this.fetchData = function(callback) {
         var cb = callback.bind(this);
@@ -59,7 +63,7 @@ var Calc = function(){
         }, 1000);
 
         return this;
-    }
+    };
 }
 
 var Calculator = new Calс();
