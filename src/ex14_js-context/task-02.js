@@ -47,6 +47,8 @@ function Hangman(word) {
     
     this.getStatus = function() {
         console.log(this.guessedLetters.join('') + ' | errors left ' + this.errors);
+
+        return this;
     };
     
     this.startAgain = function(newWord) {
