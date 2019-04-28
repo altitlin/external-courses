@@ -1,42 +1,51 @@
 function Hangman(word) { 
-    this.errors = 6; 
-    this.letters = word.split(''); 
-    this.wrongLetter = []; 
-    this.guessedLetters = this.letters.map(function(a) {
-        return '_';
-    });
+    var lifes;
+    var letters;
+    var wrongLetter;
+    var guessedLetters;
+
+    function initGame(word) {
+        lifes = 6; 
+        letters = word.split(''); 
+        wrongLetter = []; 
+        guessedLetters = letters.map(function(a) {
+            return '_';
+        });
+    };
+
+    initGame(word);
     
     this.getGuessedString = function() {
-        return this.guessedLetters.join('');
+        return guessedLetters.join('');
     };	
     
     this.getErrorsLeft = function() { 
-        return this.errors; 
+        return lifes; 
     };
     
     this.getWrongSymbols = function() { 
-        return this.wrongLetter; 
+        return wrongLetter; 
     };
     
     this.guess = function(letter) { 
         var lt = letter.toLowerCase(); 
         var from = 0; 
         
-        if (this.errors !== 0) { 
-            if (this.letters.indexOf(lt, from) === -1 ) { 
-                this.errors--; 
-                this.wrongLetter.push(lt); 
-                console.log('wrong letter, errors left ' + this.errors + ' | ' + this.wrongLetter.join(',')); 
+        if (lifes !== 0) { 
+            if (letters.indexOf(lt, from) === -1 ) { 
+                lifes--; 
+                wrongLetter.push(lt); 
+                console.log('wrong letter, errors left ' + lifes + ' | ' + wrongLetter.join(',')); 
             } else {
-                while (this.letters.indexOf(lt, from) !== -1) {
-                    this.guessedLetters[this.letters.indexOf(lt, from)] = lt;
-                    from = this.letters.indexOf(lt, from) + 1;
+                while (letters.indexOf(lt, from) !== -1) {
+                    guessedLetters[letters.indexOf(lt, from)] = lt;
+                    from = letters.indexOf(lt, from) + 1;
                 }
 
-                if (this.guessedLetters.indexOf('_') !== -1) {
-                    console.log(this.guessedLetters.join(''));
+                if (guessedLetters.indexOf('_') !== -1) {
+                    console.log(guessedLetters.join(''));
                 } else {
-                    console.log(this.this.guessedLetters.join('') + ' | You won!');
+                    console.log(guessedLetters.join('') + ' | You won!');
                 }
             }
         } else { 
@@ -47,18 +56,13 @@ function Hangman(word) {
     };
     
     this.getStatus = function() {
-        console.log(this.guessedLetters.join('') + ' | errors left ' + this.errors);
+        console.log(guessedLetters.join('') + ' | errors left ' + lifes);
 
         return this;
     };
     
     this.startAgain = function(newWord) {
-        this.errors = 6; 
-        this.letters = newWord.split(''); 
-        this.wrongLetter = []; 
-        this.guessedLetters = this.letters.map(function(a) {
-            return '_';
-        });
+        initGame(newWord);
         
         return this;
     };
