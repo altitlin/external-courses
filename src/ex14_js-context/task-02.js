@@ -7,16 +7,16 @@ function Hangman(word) {
     });
     
     this.getGuessedString = function() {
-        console.log(this.guessedLetters.join(''));
-    }	
+        return this.guessedLetters.join('');
+    };	
     
     this.getErrorsLeft = function() { 
-        console.log(this.errors); 
-    }
+        return this.errors; 
+    };
     
     this.getWrongSymbols = function() { 
-        console.log(this.wrongLetter); 
-    }
+        return this.wrongLetter; 
+    };
     
     this.guess = function(letter) { 
         var lt = letter.toLowerCase(); 
@@ -44,13 +44,13 @@ function Hangman(word) {
         } 
         
         return this; 
-    }
+    };
     
     this.getStatus = function() {
         console.log(this.guessedLetters.join('') + ' | errors left ' + this.errors);
 
         return this;
-    }
+    };
     
     this.startAgain = function(newWord) {
         this.errors = 6; 
@@ -61,8 +61,7 @@ function Hangman(word) {
         });
         
         return this;
-    }
-    
+    };
 }
 
 var hangman = new Hangman('webpurple');
