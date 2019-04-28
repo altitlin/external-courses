@@ -2,21 +2,21 @@ function Hangman(word) {
     this.errors = 6; 
     this.letters = word.split(''); 
     this.wrongLetter = []; 
-    this.guessedLetters = this.letters.map(function() {
+    this.guessedLetters = this.letters.map(function(a) {
         return '_';
     });
     
     this.getGuessedString = function() {
         console.log(this.guessedLetters.join(''));
-    };	
+    }	
     
     this.getErrorsLeft = function() { 
         console.log(this.errors); 
-    }; 
+    }
     
     this.getWrongSymbols = function() { 
         console.log(this.wrongLetter); 
-    }; 
+    }
     
     this.guess = function(letter) { 
         var lt = letter.toLowerCase(); 
@@ -32,6 +32,7 @@ function Hangman(word) {
                     this.guessedLetters[this.letters.indexOf(lt, from)] = lt;
                     from = this.letters.indexOf(lt, from) + 1;
                 }
+
                 if (this.guessedLetters.indexOf('_') !== -1) {
                     console.log(this.guessedLetters.join(''));
                 } else {
@@ -43,24 +44,24 @@ function Hangman(word) {
         } 
         
         return this; 
-    };
+    }
     
     this.getStatus = function() {
         console.log(this.guessedLetters.join('') + ' | errors left ' + this.errors);
 
         return this;
-    };
+    }
     
     this.startAgain = function(newWord) {
         this.errors = 6; 
         this.letters = newWord.split(''); 
         this.wrongLetter = []; 
-        this.guessedLetters = this.letters.map(function() {
+        this.guessedLetters = this.letters.map(function(a) {
             return '_';
         });
         
         return this;
-    };
+    }
     
 }
 
