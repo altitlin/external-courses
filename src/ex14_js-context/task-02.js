@@ -4,7 +4,7 @@ function Hangman(word) {
     var wrongLetter;
     var guessedLetters;
 
-    function initGame(word) {
+    function initGame() {
         lifes = 6; 
         letters = word.split(''); 
         wrongLetter = []; 
@@ -13,7 +13,7 @@ function Hangman(word) {
         });
     };
 
-    initGame(word);
+    initGame();
     
     this.getGuessedString = function() {
         return guessedLetters.join('');
@@ -61,8 +61,8 @@ function Hangman(word) {
         return this;
     };
     
-    this.startAgain = function(newWord) {
-        initGame(newWord);
+    this.startAgain = function() {
+        initGame();
         
         return this;
     };
