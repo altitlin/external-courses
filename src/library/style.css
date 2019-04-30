@@ -1,0 +1,337 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: rgb(120, 130, 157);
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+body > header {
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgb(47, 54, 74);
+}
+
+header ul {
+    display: flex;
+    flex-direction: row;
+}
+
+header li a {
+    position: relative;
+    display: block;
+    padding: 18px 20px;
+    color: rgba(120, 130, 157, 0.8);
+}
+
+header ul li:first-child a::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    right: -2px;
+    width: 4px;
+    height: 4px;
+    background-color: rgba(25, 32, 46, 0.749);
+    border-radius: 50%;
+}
+
+header .author {
+    background-color: rgb(21, 164, 250);
+}
+
+header .author a {
+    color: rgb(255, 255, 255);
+}
+
+header .author i {
+    margin-left: 15px;
+}
+
+header .author img {
+    width: 36px;
+    height: 36px;
+    border: 2px solid rgb(238, 241, 247);
+    border-radius: 50%;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 200px;
+    padding-top: 35px;
+    background-color: rgb(31, 38, 55);
+}
+
+aside > header {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 35px;
+    border-bottom: 4px solid rgba(24, 30, 44, 0.8);
+}
+
+aside header button {
+    position: relative;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.857;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid rgb(242, 121, 90);
+    padding: 9px 16px;
+    background-color: rgb(242, 121, 90);
+    cursor: pointer;
+}
+
+aside header button i {
+    margin-right: 15px;
+}
+
+aside nav {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;    
+    border-bottom: 4px solid rgba(24, 30, 44, 0.8);
+}
+
+aside nav a {
+    color: rgb(120, 130, 157);   
+    padding: 15px 20px;
+    align-content: center;
+}
+
+aside  nav a i {
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+aside nav a:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(21, 164, 250);
+}
+
+.categories {
+    padding: 15px 20px;
+    padding-bottom: 25px;
+    border-bottom: 4px solid rgba(24, 30, 44, 0.8);
+}
+
+.categories li {
+    position: relative;
+    padding-left: 25px;
+}
+
+.categories li a {
+    display: block;
+    color: rgb(120, 130, 157);
+}
+
+.categories li::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.categories li:nth-child(1)::before {
+    background-color: rgb(230, 76, 102);
+}
+
+.categories li:nth-child(2)::before {
+    background-color: rgb(255, 171, 0)
+}
+
+.categories li:nth-child(3)::before {
+    background-color: rgb(0, 191, 221);
+}
+
+.categories li:nth-child(4)::before {
+    background-color: rgb(120, 116, 207);
+}
+
+.categories li:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.history {
+    padding: 35px 20px;
+    position: relative;
+	margin-bottom: 52px;
+}
+
+.history > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+} 
+
+.history > div:not(:last-child) {
+    margin-bottom: 35px;
+}
+
+.history > div > span {
+    margin-right: 10px;
+}
+
+.history p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.history p:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+main {
+    flex: 1;
+}
+
+main header {
+    background-color: rgb(238, 241, 247);
+}
+
+main header h1 {
+    padding: 25px 20px;
+    margin: 0;
+    margin-bottom: 15px;
+    color: rgb(68, 76, 99);
+    font-size: 22px;
+    font-weight: 400;
+    border-bottom: 1px solid rgb(218, 223, 234);
+}
+
+main .bottom-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px 15px;
+    border-bottom: 1px solid rgb(218, 223, 234);
+}
+
+.bottom-panel a {
+    display: inline-block;
+    padding: 3px 12px;
+    color:rgb(120, 130, 157);
+}
+
+.bottom-panel a.active {
+    border-radius: 9px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(151, 179, 206);
+}
+
+.bottom-panel form {
+    width: 400px;
+    position: relative;
+}
+
+.bottom-panel input {
+    width: 100%;
+    padding: 8px 20px;
+    border: 1px solid rgb(140, 151, 178);;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, .4);
+}
+
+.bottom-panel button {
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    color: rgb(120, 130, 157);
+    background-color: rgba(255, 255, 255, .4);
+    border: 1px solid  rgba(255, 255, 255, .4);
+}
+
+main section {
+    padding: 30px 20px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+section article {
+    flex-basis: 300px;
+}
+
+section article:nth-child(1),
+section article:nth-child(2),
+section article:nth-child(3),
+section article:nth-child(4),
+section article:nth-child(5) {
+    margin-bottom: 30px;
+}
+
+section figure {
+    margin: 0;
+}
+
+figure figcaption {
+    color: rgb(68, 76, 99);
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+figure img {
+    margin-bottom: 15px;
+}
+
+article > span {
+    display: block;
+    color: rgb(111, 125, 149);
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+article .rating i {
+    color: rgb(255, 171, 0);
+    font-size: 14px;
+}
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgb(24, 30, 44);
+}
+
+footer ul {
+    display: flex;
+    flex-direction: row;
+}
+
+footer ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+}
+
+footer ul li:first-child {
+    background-color: rgb(31, 38, 55);
+}
+
+footer ul li:last-child {
+    background-color: rgb(21, 164, 250);
+}
