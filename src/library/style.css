@@ -1,6 +1,11 @@
+html {
+    height: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
+    height: 100vh;
     color: rgb(120, 130, 157);
     font-family: 'Proxima Nova', sans-serif;
     font-size: 13px;
@@ -17,6 +22,8 @@ ul {
     padding: 0;
     list-style-type: none;
 }
+
+/* style for header begin */
 
 body > header {
     display: flex;
@@ -66,10 +73,18 @@ header .author img {
     border-radius: 50%;
 }
 
+/* style for header end */
+
+
+/* style for content begin */
+
 .container {
     display: flex;
     flex-direction: row;
+    flex: 1 0 auto;
 }
+
+/* style for sidebar*/
 
 aside {
     display: flex;
@@ -205,6 +220,8 @@ aside nav a:hover {
     margin-bottom: 20px;
 }
 
+/* style for books*/
+
 main {
     flex: 1;
 }
@@ -310,9 +327,15 @@ article .rating i {
     font-size: 14px;
 }
 
+/* style for content end */
+
+
+/* style for footer begin */
+
 footer {
     display: flex;
     justify-content: flex-end;
+    flex-shrink: 0;
     background-color: rgb(24, 30, 44);
 }
 
@@ -335,3 +358,5 @@ footer ul li:first-child {
 footer ul li:last-child {
     background-color: rgb(21, 164, 250);
 }
+
+/*style for footer end*/
