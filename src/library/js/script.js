@@ -1,20 +1,21 @@
-var requestURL = 'https://rsu-library-api.herokuapp.com/books';
-var request = new XMLHttpRequest();
+window.onload = function() {
+    var booksArray = loadBooks();
 
-function callApi(url, callback, objSetting) {
-    var requestURL = url;
-    var request = objSetting;
+    var section = document.querySelector('section');
+    booksArray.forEach(function(item) {
+        var itemBook = createBook(item);
+        section.appendChild(itemBook);
+    });
+};
 
-    request.open('GET', requestURL);
-    request.responseType = 'json';
-    request.send();
-    request.onload = function() {
-        var books = request.response;
-        callback(books);
-    }
+function loadBooks() {
+    var xhr = new XMLHttpRequest();
+
+    xhr.open('GET', 'https://rsu-library-api.herokuapp.com/books', false);
+    xhr.send();
+
+    return JSON.parse(xhr.responseText);
 }
-
-callApi(requestURL, showBooks, request);
 
 function createBook(item) {
     var article = document.createElement('article');
@@ -45,13 +46,4 @@ function createBook(item) {
     }
 
     return article;
-}
-
-function showBooks(booksArray) {
-    var section = document.querySelector('section');
-
-    booksArray.forEach(function(item) {
-        var itemBook = createBook(item);
-        section.appendChild(itemBook);
-    });
 }

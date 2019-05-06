@@ -1,83 +1,3 @@
-html {
-    height: 100%;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    color: rgb(120, 130, 157);
-    font-family: 'Proxima Nova', sans-serif;
-    font-size: 13px;
-    display: flex;
-    flex-direction: column;
-}
-
-a {
-    text-decoration: none;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-
-/* style for header begin */
-
-body > header {
-    display: flex;
-    justify-content: flex-end;
-    background-color: rgb(47, 54, 74);
-}
-
-header ul {
-    display: flex;
-    flex-direction: row;
-}
-
-header li a {
-    position: relative;
-    display: block;
-    padding: 18px 20px;
-    color: rgba(120, 130, 157, 0.8);
-}
-
-header ul li:first-child a::before {
-    content: '';
-    position: absolute;
-    top: 24px;
-    right: -2px;
-    width: 4px;
-    height: 4px;
-    background-color: rgba(25, 32, 46, 0.749);
-    border-radius: 50%;
-}
-
-header .author {
-    background-color: rgb(21, 164, 250);
-}
-
-header .author a {
-    color: rgb(255, 255, 255);
-}
-
-header .author i {
-    margin-left: 15px;
-}
-
-header .author img {
-    width: 36px;
-    height: 36px;
-    border: 2px solid rgb(238, 241, 247);
-    border-radius: 50%;
-}
-
-/* style for header end */
-
-
-/* style for content begin */
-
 .container {
     display: flex;
     flex-direction: row;
@@ -87,6 +7,7 @@ header .author img {
 /* style for sidebar*/
 
 aside {
+    position: relative;
     display: flex;
     flex-direction: column;
     flex-basis: 200px;
@@ -326,37 +247,3 @@ article .rating i {
     color: rgb(255, 171, 0);
     font-size: 14px;
 }
-
-/* style for content end */
-
-
-/* style for footer begin */
-
-footer {
-    display: flex;
-    justify-content: flex-end;
-    flex-shrink: 0;
-    background-color: rgb(24, 30, 44);
-}
-
-footer ul {
-    display: flex;
-    flex-direction: row;
-}
-
-footer ul li a {
-    display: block;
-    padding: 15px 20px;
-    color: rgb(255, 255, 255);
-    font-size: 16px;
-}
-
-footer ul li:first-child {
-    background-color: rgb(31, 38, 55);
-}
-
-footer ul li:last-child {
-    background-color: rgb(21, 164, 250);
-}
-
-/*style for footer end*/
