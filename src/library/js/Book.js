@@ -36,13 +36,14 @@ function Books(objBook) {
 
         for (let j = 5; j > 0; j--) {
             var star = document.createElement('i');
-            star.innerHTML = '☆';
+            star.className = 'fa-star';
 
             if (rating) {
-                star.className = 'star';
-                star.style.order = '1';
+                star.classList.add('fa');
                 rating--;
-            } 
+            } else {
+                star.classList.add('far');
+            }
 
             ratingContainer.appendChild(star);
         }

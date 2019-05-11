@@ -261,26 +261,33 @@ article .rating div > i {
     position: relative;
     margin: 0 2px 0 0;
     color: rgb(255, 171, 0);
-    font-size: 22px;
-    font-style: normal;
 }
 
-article .rating div > i:hover,
-article .rating div > i:hover ~ i {
-    color: rgb(255, 171, 0);
+article .rating div > .fa:nth-child(1) {
+    order: 5;
 }
 
-article .rating div > i:hover:before,
-article .rating div > i:hover ~ i:before {
-    content: "\2605";
-    position: absolute;
-    top: 0;
-    color: rgb(255, 171, 0);
+article .rating div > .fa:nth-child(2) {
+    order: 4;
 }
 
-article .rating div > .star:before {
-    content: "\2605";
-    position: absolute;
-    top: 0;
-    color: rgb(255, 171, 0);
+article .rating div > .fa:nth-child(3) {
+    order: 2;
+}
+
+article .rating div > .fa:nth-child(4) {
+    order: 1;
+}
+
+article .rating div > .fa:nth-child(5) {
+    order: 0;
+}
+
+article .rating div > .far:hover,
+article .rating div > .far:hover ~ .far {
+    font-weight: bold;
+}
+
+article .rating div > .fa:hover ~ .fa {
+    font-weight: normal;
 }
