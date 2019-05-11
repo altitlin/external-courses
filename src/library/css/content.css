@@ -37,6 +37,10 @@ aside header button {
     cursor: pointer;
 }
 
+aside header button a {
+    color: rgb(255, 255, 255);
+}
+
 aside header button i {
     margin-right: 15px;
 }
@@ -243,7 +247,40 @@ article > span {
     margin-bottom: 10px;
 }
 
-article .rating i {
+article .rating {
+    display: flex;
+    justify-content: flex-start;
+}
+
+article .rating div {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+article .rating div > i {
+    position: relative;
+    margin: 0 2px 0 0;
     color: rgb(255, 171, 0);
-    font-size: 14px;
+    font-size: 22px;
+    font-style: normal;
+}
+
+article .rating div > i:hover,
+article .rating div > i:hover ~ i {
+    color: rgb(255, 171, 0);
+}
+
+article .rating div > i:hover:before,
+article .rating div > i:hover ~ i:before {
+    content: "\2605";
+    position: absolute;
+    top: 0;
+    color: rgb(255, 171, 0);
+}
+
+article .rating div > .star:before {
+    content: "\2605";
+    position: absolute;
+    top: 0;
+    color: rgb(255, 171, 0);
 }
