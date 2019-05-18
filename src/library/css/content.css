@@ -115,9 +115,11 @@ aside nav a:hover {
 }
 
 .history {
-    padding: 35px 20px;
+    height: calc(100% - 105px - 333px - 194px - 18px); 
+    overflow-x: hidden; 
+    overflow-y: scroll; 
+    padding: 32px 20px;
     position: relative;
-	margin-bottom: 52px;
 }
 
 .history > div {
@@ -149,6 +151,8 @@ aside nav a:hover {
 
 main {
     flex: 1;
+    position: relative; 
+    height: calc(100vh - 45px); 
 }
 
 main header {
@@ -188,7 +192,6 @@ main .bottom-panel {
 
 .bottom-panel form {
     width: 400px;
-    position: relative;
 }
 
 .bottom-panel input {
@@ -199,19 +202,17 @@ main .bottom-panel {
     background-color: rgba(255, 255, 255, .4);
 }
 
-.bottom-panel button {
-    position: absolute;
-    top: 8px;
-    right: 20px;
-    color: rgb(120, 130, 157);
-    background-color: rgba(255, 255, 255, .4);
-    border: 1px solid  rgba(255, 255, 255, .4);
-}
-
 main section {
-    padding: 30px 20px;
-    display: flex;
-    flex-flow: row wrap;
+    display: flex; 
+    flex-flow: row wrap; 
+    position: absolute; 
+    width: calc(100% - 35px); 
+    height: calc(100% - 145px - 130px); 
+    top: calc(123px + 40px); 
+    left: calc(10px + 15px); 
+    overflow-x: hidden; 
+    overflow-y: scroll; 
+    
 }
 
 section article {
@@ -258,36 +259,40 @@ article .rating div {
 }
 
 article .rating div > i {
-    position: relative;
     margin: 0 2px 0 0;
     color: rgb(255, 171, 0);
 }
 
-article .rating div > .fa:nth-child(1) {
+article .rating div > i.fa:nth-child(1) {
     order: 5;
 }
 
-article .rating div > .fa:nth-child(2) {
+article .rating div > i.fa:nth-child(2) {
     order: 4;
 }
 
-article .rating div > .fa:nth-child(3) {
+article .rating div > i.fa:nth-child(3) {
+    order: 3;
+}
+
+article .rating div > i.fa:nth-child(4) {
     order: 2;
 }
 
-article .rating div > .fa:nth-child(4) {
+article .rating div > i.fa:nth-child(5) {
     order: 1;
 }
 
-article .rating div > .fa:nth-child(5) {
-    order: 0;
-}
-
-article .rating div > .far:hover,
-article .rating div > .far:hover ~ .far {
-    font-weight: bold;
-}
-
-article .rating div > .fa:hover ~ .fa {
+article .rating div > i:hover ~ .fa,
+article .rating div > i.fa:hover ~ .far,
+article .rating div > i:hover ~ .far,
+article .rating div > i.far:hover ~ .far {
     font-weight: normal;
+}
+
+article .rating div > .paint,
+article .rating div > .far.paint ~ .far,
+article .rating div > i.far:hover,
+article .rating div > i.far:hover ~ i.far {
+    font-weight: bold;
 }

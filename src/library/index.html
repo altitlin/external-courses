@@ -67,10 +67,10 @@
                     </a>
                 </nav>
                 <ul class="categories">
-                    <li><a href="">Read Titles</a></li>
-                    <li><a href="">Best Of List</a></li>
-                    <li><a href="">Classic Novels</a></li>
-                    <li><a href="">Non Fiction</a></li>
+                    <li><a href="#" data-category="must_read">Read Titles</a></li>
+                    <li><a href="#" data-category="best">Best Of List</a></li>
+                    <li><a href="#" data-category="classic">Classic Novels</a></li>
+                    <li><a href="#" data-category="non_fiction">Non Fiction</a></li>
                 </ul>
                 <div class="history">
                     <div>
@@ -97,17 +97,14 @@
                 <header>
                     <h1>Browse Available Books</h1>
                     <div class="bottom-panel">
-                        <nav>
-                            <a href="#" class="active">All Books</a>
-                            <a href="#">Most Recent</a>
-                            <a href="#">Most Popular</a>
-                            <a href="#">Free Book</a>
+                        <nav class="filters">
+                            <a href="#" data-filter="all" class="active">All Books</a>
+                            <a href="#" data-filter="recent">Most Recent</a>
+                            <a href="#" data-filter="popular">Most Popular</a>
+                            <a href="#"  data-filter="free">Free Book</a>
                         </nav>
                         <form action="#" method="get">
                             <input type="search" name="search" placeholder="Enter Keywords">
-                            <button type="submit">
-                                <i class="fas fa-search"></i>
-                            </button>
                         </form>
                     </div>
                 </header>
@@ -158,5 +155,8 @@
 
         <script src="js/request.js"></script>
         <script src="js/Book.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/filter.js"></script>
+        <script src="js/category.js"></script>
     </body>
 </html>

@@ -16,6 +16,7 @@ body {
     font-size: 13px;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 a {

@@ -1,9 +1,11 @@
+var booksArray = loadBooks();
+
 window.onload = function() {
     var booksArray = loadBooks();
 
     var section = document.querySelector('section');
     booksArray.forEach(function(item) {
-        var itemBook = new Books(item);
+        var itemBook = new Book(item);
         section.appendChild(itemBook.getSectionBook());
     });
 };

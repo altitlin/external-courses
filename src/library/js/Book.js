@@ -1,4 +1,4 @@
-function Books(objBook) {
+function Book(objBook) {
     var sectionBook = createBook(objBook);
 
     this.getSectionBook = function() {
@@ -26,7 +26,7 @@ function Books(objBook) {
         article.appendChild(div);
 
         div.appendChild(setRating(item.rating));
-            
+
         return article;
     }
 
@@ -34,23 +34,61 @@ function Books(objBook) {
         var rating = objRating;
         var ratingContainer = document.createElement('div');
 
-        for (let j = 5; j > 0; j--) {
+        for (let i = 0; i < 5; i++) {
             var star = document.createElement('i');
             star.className = 'fa-star';
 
             if (rating) {
                 star.classList.add('fa');
+                star.classList.add('paint');
                 rating--;
             } else {
                 star.classList.add('far');
             }
 
             ratingContainer.appendChild(star);
+            ratingContainer.addEventListener('click', onClickRating);
         }
         
         return ratingContainer;
     }   
+
+    function onClickRating(event) {
+        var target = event.target;
+
+        if (target.tagName !== 'I') return;
+
+        switch (target.className) {
+            case 'fa-star far':
+            case 'fa-star far paint': {
+                paintOver(target);
+                break;
+            }
+
+            case 'fa-star fa':
+            case 'fa-star fa paint': {
+                unPaintOver(target);
+                break;
+            }
+        }
+    }
+
+    function paintOver(target) {
+        target.parentNode.childNodes.forEach(elem => {
+            elem.classList.remove('paint');
+        });
+
+        target.classList.add('paint');
+    }
+
+    function unPaintOver(target) {
+        target.parentNode.childNodes.forEach(elem => {
+			elem.classList.remove('paint');
+            elem.classList.remove('fa');
+            elem.classList.add('far');
+        });
+    }
 }
 
-Books.prototype = Object.create(Object.prototype);
-Books.prototype.constructor = Books;
+Book.prototype = Object.create(Object.prototype);
+Book.prototype.constructor = Book;
