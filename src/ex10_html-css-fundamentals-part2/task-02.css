@@ -30,10 +30,7 @@ td {
     background-color: #F0F8FF;
 }
 
-#row-1,
-#row-2,
-#row-3,
-#row-4 {
+.row-1 {
     font-size: 14px;
     text-transform: uppercase;
 }
@@ -47,7 +44,7 @@ td {
     text-transform: capitalize;
 }
 
-tbody tr:hover td {
+tr:hover td {
     border: 1px solid#D3D3D3;
     background-color:#D3D3D3;
 }
