@@ -70,6 +70,9 @@ function Book(objBook) {
                 unPaintOver(target);
                 break;
             }
+
+            default: 
+                break;
         }
     }
 
