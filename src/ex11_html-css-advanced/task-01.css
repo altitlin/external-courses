@@ -1,0 +1,32 @@
+.container { 
+    margin: 0; 
+    padding: 0; 
+} 
+
+.block { 
+    width: 400px; 
+    margin: 0 auto; 
+} 
+
+.image { 
+    width: 400px; 
+} 
+
+.block:not(:last-child) .image { 
+    margin-bottom: 30px; 
+} 
+
+.block1 .image { 
+    border-radius: 50%; 
+} 
+
+.block2 .image  { 
+    width: 400px; 
+    height: 400px; 
+    -webkit-mask-image: url(http://tympanus.net/codrops-playground/assets/images/cssref/properties/mask-image/mask-image.png);
+    mask-image: url(http://tympanus.net/codrops-playground/assets/images/cssref/properties/mask-image/mask-image.png);
+    -webkit-mask-position: center center;
+    mask-position: center center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+} 
