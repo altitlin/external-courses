@@ -123,17 +123,13 @@
             </ul>
         </footer>
 
-        <div class="modal" id="openModal">
+        <div class="modal hide" id="openModal">
             <div>
                 <a href="#close" title="Закрыть" class="close">
                     <i class="fas fa-times-circle"></i>
                 </a>
                 <h2>Добавить книгу в библиотеку</h2>
-                <form action="#" method="post">
-                    <label>
-                        Image of the book
-                        <input type="file" name="image_url" id="image_url">
-                    </label>
+                <form action="#" method="post" name="add_book">
                     <label>
                         Title of the book
                         <input type="text" name="title" id="title" placeholder="Enter title of the book">
@@ -146,6 +142,30 @@
                         Author's lastname
                         <input type="text" name="lastname" id="lastname"  placeholder="Enter lastname">
                     </label>
+                    <label>
+                        Cost
+                        <input type="text" name="cost" id="cost"  placeholder="Enter cost">
+                    </label>
+                    <label>
+                        Categories
+                        <div>
+                            <label>
+                                Must Read <input type="checkbox" name="category" value="must_read" checked>
+                            </label>
+                            <label>
+                                Best <input type="checkbox" name="category" value="best">
+                            </label>
+                            <label>
+                                Classic <input type="checkbox" name="category" value="classic">
+                            </label>
+                            <label>
+                                Non Ficton <input type="checkbox" name="category" value="classic">
+                            </label>
+                        </div>
+                    </label>
+                    <label>
+                        Image <input type="url" name="image_url" id="image_url" placeholder="Enter image url">
+                    </label>
                     <div>
                         <button type="submit">Add</button>
                     </div> 
@@ -153,10 +173,11 @@
             </div>
         </div>
 
-        <script src="js/request.js"></script>
-        <script src="js/Book.js"></script>
-        <script src="js/utils.js"></script>
-        <script src="js/filter.js"></script>
-        <script src="js/category.js"></script>
+        <script src="./utils/callApi.js"></script>
+        <script src="./utils/debounce.js"></script>
+        <script src="./controllers/LibraryController.js"></script>
+        <script src="./models/LibraryModel.js"></script>
+        <script src="./views/LibraryView.js"></script>
+        <script src="App.js"></script>
     </body>
 </html>

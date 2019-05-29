@@ -7,13 +7,14 @@
 	background: rgba(0,0,0,0.8);
 	z-index: 99999;
 	transition: opacity 400ms ease-in;
-	display: none;
-	pointer-events: none;
 }
 
-.modal:target {
-	display: block;
-	pointer-events: auto;
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
 }
 
 .modal > div {
@@ -62,13 +63,14 @@
     align-items: center;
 }
 
-.modal label input[type="text"] {
+.modal label input[type="text"],
+.modal label input[type="url"] {
     padding: 5px 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
 }
 
-.modal form div {
+.modal > form > div {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
