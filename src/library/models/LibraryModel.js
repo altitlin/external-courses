@@ -1,5 +1,7 @@
 (function () {
 
+    'use strict';
+
     function LibraryModel() {
         this.books = [];
         this.currentFilter = 'all';
@@ -17,28 +19,28 @@
         this.books = array;
     };
 
-    LibraryModel.prototype.showFree = function() {
+    LibraryModel.prototype.getFree = function() {
         return this.books.filter(item => item.cost === 0);
     };
 
-    LibraryModel.prototype.showPopular = function() {
+    LibraryModel.prototype.getPopular = function() {
         return this.books.filter(item => item.rating === 5);
     };
     
-    LibraryModel.prototype.showRecent = function() {
+    LibraryModel.prototype.getRecent = function() {
         return this.books.sort((a, b) => a.createdAt > b.updatedAt);
     };
 
     LibraryModel.prototype.filteringBook = function() {
         switch (this.currentFilter) {
             case 'recent': {
-                return this.showRecent();
+                return this.getRecent();
             }
             case 'popular': {
-                return this.showPopular();
+                return this.getPopular();
             }
             case 'free': {
-                return this.showFree();
+                return this.getFree();
             }
             default: {
                 return this.getBooks();
@@ -58,9 +60,7 @@
 
     LibraryModel.prototype.filterBooksByCategory = function(titleCategory) {
         return this.books.filter(function(book) {
-            if (book.categories.includes(titleCategory)) return true;
-    
-            return false;
+            return book.categories.includes(titleCategory);
         });
     };
 

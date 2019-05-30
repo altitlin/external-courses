@@ -217,13 +217,6 @@ main section {
 
 section article {
     flex-basis: 300px;
-}
-
-section article:nth-child(1),
-section article:nth-child(2),
-section article:nth-child(3),
-section article:nth-child(4),
-section article:nth-child(5) {
     margin-bottom: 30px;
 }
 

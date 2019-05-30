@@ -1,4 +1,4 @@
-const callApi = ((url, cb) => {
+const callApi = (url, cb) => {
     let xhr = new XMLHttpRequest();
 
     xhr.open('GET', url, true);
@@ -8,4 +8,4 @@ const callApi = ((url, cb) => {
         let books = JSON.parse(xhr.responseText);;
         cb(books);
     };
-});
+};

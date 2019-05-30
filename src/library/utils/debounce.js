@@ -1,4 +1,4 @@
-const debounce = ((func, delay) => {
+const debounce = (func, delay) => {
     let timeout = null;    
     
     return function(event) {
@@ -8,4 +8,4 @@ const debounce = ((func, delay) => {
             func.call(null, event);
         }, delay);
     };
-});
+};

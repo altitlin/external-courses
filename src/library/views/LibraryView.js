@@ -1,5 +1,7 @@
 (function () {
 
+    'use strict';
+
     function LibraryView(libraryController) {
         this.libraryController = libraryController;
 
@@ -16,7 +18,7 @@
         this.modal = document.querySelector('.modal');
         this.form = document.forms.add_book;
 
-        this.__onclickFilter = (event => {
+        this.__onclickFilter = event => {
             var target = event.target;
 
             if (target.tagName !== 'A') return;
@@ -35,10 +37,10 @@
             this.libraryController.setCurrentFilter(titleFilter);
             var filteredBooks = this.libraryController.filteringBook();
             this.showBooks(filteredBooks);
-        });
+        };
         this.filterContainer.addEventListener('click', this.__onclickFilter);
 
-        this.__onClickCategory = (event => {
+        this.__onClickCategory = event => {
             var target = event.target;
 
             if (target.tagName !== 'A') return;
@@ -47,10 +49,10 @@
             var booksByCategories = this.libraryController.filterBooksByCategory(titleCategory);
             
             this.showBooks(booksByCategories);
-        });
+        };
         this.categoryContainer.addEventListener('click', this.__onClickCategory);
 
-        this.__onClickRating = (event => {
+        this.__onClickRating = event => {
             var target = event.target;
 
             if (target.tagName !== 'I') return;
@@ -71,39 +73,56 @@
                 default: 
                     break;
             }
-        });
+        };
 
-        this.__handleOnChangeInput = (event => {
+        this.__handleOnChangeInput = event => {
             var searchInput = event.target.value;
             var filteredBooksBySearch = this.libraryController.filteringBookBySearch(searchInput.toLowerCase());
 
             this.showBooks(filteredBooksBySearch);
             
-        });
+        };
         this.inputSearch.addEventListener('keyup', debounce(this.__handleOnChangeInput, 300));
 
-        this.__onClickAddBook = (() => {
+        this.__onClickAddBook = () => {
+            var validData = 
+                this.form.elements.title.value !== '' &&
+                this.form.elements.firsname.value !== '' &&
+                this.form.elements.lastname.value !== '' &&
+                this.form.elements.cost.value >= 0 &&
+                this.form.elements.image_url.value !== '';
+
             var books = this.libraryController.getBooks();
             var book = {};
 
             book.id = books[books.length - 1].id + 1;
-            book.title = this.form.elements.title.value;
+            book.title = this.setFirstCharcterWordUpperCase(this.form.elements.title.value);
             book.author = {
-                firstName: this.form.elements.firsname.value,
-                lastName: this.form.elements.lastname.value
+                firstName: this.setFirstCharcterWordUpperCase(this.form.elements.firsname.value),
+                lastName: this.setFirstCharcterWordUpperCase(this.form.elements.lastname.value)
             };
             book.rating = 0;
             book.cost = +this.form.elements.cost.value;
-            book.categories = Array.from(document.querySelectorAll("input.checkbox:checked")).map(elem => elem.value);
+            book.categories = Array.from(document.querySelectorAll('input[type=checkbox]:checked')).map(elem => elem.value);
             book.createdAt = new Date().getTime();
             book.updatedAt = new Date().getTime();
             book.image_url = this.form.elements.image_url.value;
 
-            this.libraryController.addNewBook(book);
-            var addedBooks = this.libraryController.getBooks();
+            if (validData) {
+                this.libraryController.addNewBook(book);
 
-            this.showBooks(addedBooks);
-        });
+                var addedBooks = this.libraryController.getBooks();
+                this.showBooks(addedBooks);
+
+                this.form.elements.title.value = '';
+                this.form.elements.firsname.value = '';
+                this.form.elements.lastname.value = '';
+                this.form.elements.cost.value = '';
+                this.form.elements.image_url.value = '';
+
+                this.__closeModal();
+            } 
+        };
         this.addBookButton.addEventListener('click', this.__onClickAddBook);
 
 
@@ -111,7 +130,16 @@
             this.modal.classList.remove('hide');
             this.modal.classList.add('show');
         });
+
+        this.__closeModal = () => {
+            this.modal.classList.remove('show');
+            this.modal.classList.add('hide');
+        };
     }
+
+    LibraryView.prototype.setFirstCharcterWordUpperCase = function(word) {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+    };
 
     LibraryView.prototype.showBooks = function(booksArray) {
         var section = document.querySelector('section');
