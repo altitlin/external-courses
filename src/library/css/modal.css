@@ -1,0 +1,89 @@
+.modal {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	transition: opacity 400ms ease-in;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.modal > div {
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 15px 20px;
+	border-radius: 5px;
+	background: #fff;
+}
+
+.close {
+	position: absolute;
+	right: 5px;
+    top: 5px;
+    color: #333;
+    text-align: center;
+}
+
+.close i {
+    font-size: 16px;
+}
+
+.close:hover i { 
+    color: #00d9ff; 
+}
+
+.modal h2 {
+    margin-bottom: 25px;
+    color: rgb(68, 76, 99);
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.modal label {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal label input[type="text"],
+.modal label input[type="url"] {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.modal > form > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.modal button {
+    padding: 5px 20px;
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: bold;
+    background-color: #A59BE8;
+    border: 1px solid #A59BE8;
+    border-radius: 3px;
+    text-transform: uppercase;
+}

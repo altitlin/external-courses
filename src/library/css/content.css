@@ -1,0 +1,291 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex: 1 0 auto;
+}
+
+/* style for sidebar*/
+
+aside {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 200px;
+    padding-top: 35px;
+    background-color: rgb(31, 38, 55);
+}
+
+aside > header {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 35px;
+    border-bottom: 4px solid rgba(24, 30, 44, 0.8);
+}
+
+aside header button {
+    position: relative;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.857;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid rgb(242, 121, 90);
+    padding: 9px 16px;
+    background-color: rgb(242, 121, 90);
+    cursor: pointer;
+}
+
+aside header button a {
+    color: rgb(255, 255, 255);
+}
+
+aside header button i {
+    margin-right: 15px;
+}
+
+aside nav {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;    
+    border-bottom: 4px solid rgba(24, 30, 44, 0.8);
+}
+
+aside nav a {
+    color: rgb(120, 130, 157);   
+    padding: 15px 20px;
+    align-content: center;
+}
+
+aside  nav a i {
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+aside nav a:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(21, 164, 250);
+}
+
+.categories {
+    padding: 15px 20px;
+    padding-bottom: 25px;
+    border-bottom: 4px solid rgba(24, 30, 44, 0.8);
+}
+
+.categories li {
+    position: relative;
+    padding-left: 25px;
+}
+
+.categories li a {
+    display: block;
+    color: rgb(120, 130, 157);
+}
+
+.categories li::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.categories li:nth-child(1)::before {
+    background-color: rgb(230, 76, 102);
+}
+
+.categories li:nth-child(2)::before {
+    background-color: rgb(255, 171, 0)
+}
+
+.categories li:nth-child(3)::before {
+    background-color: rgb(0, 191, 221);
+}
+
+.categories li:nth-child(4)::before {
+    background-color: rgb(120, 116, 207);
+}
+
+.categories li:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.history {
+    height: calc(100% - 105px - 333px - 194px - 18px); 
+    overflow-x: hidden; 
+    overflow-y: scroll; 
+    padding: 32px 20px;
+    position: relative;
+}
+
+.history > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+} 
+
+.history > div:not(:last-child) {
+    margin-bottom: 35px;
+}
+
+.history > div > span {
+    margin-right: 10px;
+}
+
+.history p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.history p:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+/* style for books*/
+
+main {
+    flex: 1;
+    position: relative; 
+    height: calc(100vh - 45px); 
+}
+
+main header {
+    background-color: rgb(238, 241, 247);
+}
+
+main header h1 {
+    padding: 25px 20px;
+    margin: 0;
+    margin-bottom: 15px;
+    color: rgb(68, 76, 99);
+    font-size: 22px;
+    font-weight: 400;
+    border-bottom: 1px solid rgb(218, 223, 234);
+}
+
+main .bottom-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px 15px;
+    border-bottom: 1px solid rgb(218, 223, 234);
+}
+
+.bottom-panel a {
+    display: inline-block;
+    padding: 3px 12px;
+    color:rgb(120, 130, 157);
+}
+
+.bottom-panel a.active {
+    border-radius: 9px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(151, 179, 206);
+}
+
+.bottom-panel form {
+    width: 400px;
+}
+
+.bottom-panel input {
+    width: 100%;
+    padding: 8px 20px;
+    border: 1px solid rgb(140, 151, 178);;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, .4);
+}
+
+main section {
+    display: flex; 
+    flex-flow: row wrap; 
+    position: absolute; 
+    width: calc(100% - 35px); 
+    height: calc(100% - 145px - 130px); 
+    top: calc(123px + 40px); 
+    left: calc(10px + 15px); 
+    overflow-x: hidden; 
+    overflow-y: scroll; 
+    
+}
+
+section article {
+    flex-basis: 300px;
+    margin-bottom: 30px;
+}
+
+section figure {
+    margin: 0;
+}
+
+figure figcaption {
+    color: rgb(68, 76, 99);
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+figure img {
+    margin-bottom: 15px;
+}
+
+article > span {
+    display: block;
+    color: rgb(111, 125, 149);
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+article .rating {
+    display: flex;
+    justify-content: flex-start;
+}
+
+article .rating div {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+article .rating div > i {
+    margin: 0 2px 0 0;
+    color: rgb(255, 171, 0);
+}
+
+article .rating div > i.fa:nth-child(1) {
+    order: 5;
+}
+
+article .rating div > i.fa:nth-child(2) {
+    order: 4;
+}
+
+article .rating div > i.fa:nth-child(3) {
+    order: 3;
+}
+
+article .rating div > i.fa:nth-child(4) {
+    order: 2;
+}
+
+article .rating div > i.fa:nth-child(5) {
+    order: 1;
+}
+
+article .rating div > i:hover ~ .fa,
+article .rating div > i.fa:hover ~ .far,
+article .rating div > i:hover ~ .far,
+article .rating div > i.far:hover ~ .far {
+    font-weight: normal;
+}
+
+article .rating div > .paint,
+article .rating div > .far.paint ~ .far,
+article .rating div > i.far:hover,
+article .rating div > i.far:hover ~ i.far {
+    font-weight: bold;
+}
